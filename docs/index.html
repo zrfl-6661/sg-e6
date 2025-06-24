@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming Soon | Squid Game Style</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(180deg, #111 0%, #2c2c2c 100%);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .logo {
+      width: 150px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 10px hotpink);
+      animation: fadeIn 1.2s ease-in-out forwards;
+    }
+
+    h1, p, .shapes {
+      opacity: 0;
+      transform: scale(0.8);
+      animation: fadeInScale 1s ease-out forwards;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 0.2em 0;
+      color: hotpink;
+      text-shadow: 0 0 10px hotpink;
+      animation-delay: 0.8s;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #ccc;
+      max-width: 400px;
+      animation-delay: 1.4s;
+    }
+
+    .shapes {
+      display: flex;
+      gap: 20px;
+      margin-top: 40px;
+      animation-delay: 2s;
+    }
+
+    .shape {
+      width: 60px;
+      height: 60px;
+      border: 3px solid white;
+    }
+
+    .circle {
+      border-radius: 50%;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 60px solid white;
+      background: none;
+      border-radius: 0;
+    }
+
+    /* Animations */
+    @keyframes fadeInScale {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio id="sfx" autoplay>
+    <source src="https://cdn.pixabay.com/download/audio/2021/09/23/audio_d7ab2e443b.mp3?filename=dark-logo-8175.mp3" type="audio/mpeg">
+    Browsermu tidak mendukung audio.
+  </audio>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Squid_Game_logo.svg/512px-Squid_Game_logo.svg.png" alt="Squid Game Logo" class="logo" />
+  <h1>COMING SOON</h1>
+  <p>Sesuatu yang misterius sedang disiapkan.<br/>Bersiaplah untuk permainan berikutnya...</p>
+
+  <div class="shapes">
+    <div class="shape circle"></div>
+    <div class="triangle"></div>
+    <div class="shape square"></div>
+  </div>
+
+  <script>
+    window.addEventListener("load", () => {
+      document.querySelectorAll("h1, p, .shapes").forEach(el => {
+        el.style.animationPlayState = "running";
+      });
+    });
+  </script>
+</body>
+</html>
